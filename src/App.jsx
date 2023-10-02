@@ -5,6 +5,7 @@ import Badge from "./atoms/badge";
 import Card from "./atoms/card";
 import './App.css';
 import cohete from './cohete.png'
+import Counter from "./atoms/counter";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Card title="Card 1" content="This is the first card." />
                 <Card title="Card 2" content="This is the second card." />
                 <Card title="Card 3" content="This is the third card." />
+                    <Counter />
             <Avatar imageSrc={cohete} description="My own avatar" />
             <Badge label="New!" />
             </div>
