@@ -1,30 +1,21 @@
 import React, { useState } from 'react';
 
-const TextComponent = () => {
- const [fontSize, setFontSize] = useState(20);
+const ShowHideText = () => {
+ const [isShown, setIsShown] = useState(false);
+ const [buttonText, setButtonText] = useState('Show');
 
- const handleIncreaseFontSize = () => {
-    setFontSize(fontSize + 1);
- };
-
- const handleDecreaseFontSize = () => {
-    if (fontSize > 10) {
-      setFontSize(fontSize - 1);
-    }
+ const handleClick = () => {
+    setIsShown(!isShown);
+    setButtonText(isShown ? 'Show' : 'Hide');
  };
 
  return (
     <div>
-      <p style={{ fontSize: `${fontSize}px` }}>
-        By clicking increase/decrease, you can change the text font size!!!
-      </p>
-      <button onClick={handleIncreaseFontSize}>Increase Font Size</button>
-      <button onClick={handleDecreaseFontSize}>Decrease Font Size</button>
+      <button onClick={handleClick}>{buttonText}</button>
+      {isShown && <p>Some hidden text goes here...</p>}
     </div>
  );
 };
 
-export default TextComponent;
-.
-
+export default ShowHideText;
 
